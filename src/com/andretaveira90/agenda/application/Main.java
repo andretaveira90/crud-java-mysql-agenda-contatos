@@ -66,8 +66,14 @@ public class Main {
 					System.out.print("Email: ");
 					contato.setEmail(scanner.nextLine());
 					System.out.print("Telefone: ");
-					contato.setTelefone(scanner.nextLine());				
-					contatoDao.atualizar(contato);
+					contato.setTelefone(scanner.nextLine());
+					System.out.println("Salvar alterações? (S/N)");
+					confirmacao = scanner.next().charAt(0);
+					if (confirmacao == 's' || confirmacao == 'S') {
+						contatoDao.atualizar(contato);
+					} else {
+						System.out.println("Alteração descartada");
+					}
 					break;
 				
 				case 4:
